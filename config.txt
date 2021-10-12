@@ -1,0 +1,1307 @@
+
+ conf
+ vlan 30
+ name IPOE
+ !
+ system mtu 2025
+
+ epon onu-config-template ACCESS
+ cmd-sequence 001 epon onu all-port ctc vlan mode tag %1
+ cmd-sequence 002 epon onu all-port storm-control mode 1 threshold 256
+ cmd-sequence 003 epon onu all-port ctc loopback detect
+ cmd-sequence 004 epon onu all-port ctc notify loopback
+ cmd-sequence 005 switchport port-security mode dynamic
+ cmd-sequence 006 switchport port-security dynamic maximum 10
+ !
+ interface GigaEthernet0/1
+ switchport trunk vlan-allowed add 30
+ switchport mode dot1q-tunnel-uplink
+ no switchport trunk vlan-untagged
+ no shutdown
+ !
+interface GigaEthernet0/2
+ switchport trunk vlan-allowed add 30
+ switchport mode dot1q-tunnel-uplink
+ no switchport trunk vlan-untagged
+ no shutdown
+ !
+interface GigaEthernet0/3
+ switchport trunk vlan-allowed add 30
+ switchport mode dot1q-tunnel-uplink
+ no switchport trunk vlan-untagged
+ no shutdown
+ !
+interface GigaEthernet0/4
+ switchport trunk vlan-allowed add 30
+ switchport mode dot1q-tunnel-uplink
+ no switchport trunk vlan-untagged
+ no shutdown
+ !
+interface GigaEthernet0/5
+ switchport trunk vlan-allowed add 30
+ switchport mode dot1q-tunnel-uplink
+ no switchport trunk vlan-untagged
+ no shutdown
+ !
+interface GigaEthernet0/6
+ switchport trunk vlan-allowed add 30
+ switchport mode dot1q-tunnel-uplink
+ no switchport trunk vlan-untagged
+ no shutdown
+ !
+interface GigaEthernet0/7
+ switchport trunk vlan-allowed add 30
+ switchport mode dot1q-tunnel-uplink
+ no switchport trunk vlan-untagged
+ no shutdown
+ !
+interface GigaEthernet0/8
+ switchport trunk vlan-allowed add 30
+ switchport mode dot1q-tunnel-uplink
+ no switchport trunk vlan-untagged
+ no shutdown
+ !
+ interface TGigaEthernet0/1
+ switchport trunk vlan-allowed add 30
+ switchport mode dot1q-tunnel-uplink
+ no shutdown
+ !
+ interface TGigaEthernet0/2
+ switchport trunk vlan-allowed add 30
+ switchport mode dot1q-tunnel-uplink
+ no shutdown
+ !
+
+
+    default interface ePON 0/1
+    interface EPON0/1
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3001
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3002
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3003
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3004
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3005
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3006
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3007
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3008
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3009
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3010
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3011
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3012
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3013
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3014
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3015
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3016
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3017
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3018
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3019
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3020
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3021
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3022
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3023
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3024
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3025
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3026
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3027
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3028
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3029
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3030
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3031
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3032
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3033
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3034
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3035
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3036
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3037
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3038
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3039
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3040
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3041
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3042
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3043
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3044
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3045
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3046
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3047
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3048
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3049
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3050
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3051
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3052
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3053
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3054
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3055
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3056
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3057
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3058
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3059
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3060
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3061
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3062
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3063
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3064
+    no shutdown
+    !
+
+
+    default interface ePON 0/2
+    interface EPON0/2
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3065
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3066
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3067
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3068
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3069
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3070
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3071
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3072
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3073
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3074
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3075
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3076
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3077
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3078
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3079
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3080
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3081
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3082
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3083
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3084
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3085
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3086
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3087
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3088
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3089
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3090
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3091
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3092
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3093
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3094
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3095
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3096
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3097
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3098
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3099
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3100
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3101
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3102
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3103
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3104
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3105
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3106
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3107
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3108
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3109
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3110
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3111
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3112
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3113
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3114
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3115
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3116
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3117
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3118
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3119
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3120
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3121
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3122
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3123
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3124
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3125
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3126
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3127
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3128
+    no shutdown
+    !
+
+
+    default interface ePON 0/3
+    interface EPON0/3
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3129
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3130
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3131
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3132
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3133
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3134
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3135
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3136
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3137
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3138
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3139
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3140
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3141
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3142
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3143
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3144
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3145
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3146
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3147
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3148
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3149
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3150
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3151
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3152
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3153
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3154
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3155
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3156
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3157
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3158
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3159
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3160
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3161
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3162
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3163
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3164
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3165
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3166
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3167
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3168
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3169
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3170
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3171
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3172
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3173
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3174
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3175
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3176
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3177
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3178
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3179
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3180
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3181
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3182
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3183
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3184
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3185
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3186
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3187
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3188
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3189
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3190
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3191
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3192
+    no shutdown
+    !
+
+
+    default interface ePON 0/4
+    interface EPON0/4
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3193
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3194
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3195
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3196
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3197
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3198
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3199
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3200
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3201
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3202
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3203
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3204
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3205
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3206
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3207
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3208
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3209
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3210
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3211
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3212
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3213
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3214
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3215
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3216
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3217
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3218
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3219
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3220
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3221
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3222
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3223
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3224
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3225
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3226
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3227
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3228
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3229
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3230
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3231
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3232
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3233
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3234
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3235
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3236
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3237
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3238
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3239
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3240
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3241
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3242
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3243
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3244
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3245
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3246
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3247
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3248
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3249
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3250
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3251
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3252
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3253
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3254
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3255
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3256
+    no shutdown
+    !
+
+
+    default interface ePON 0/5
+    interface EPON0/5
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3257
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3258
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3259
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3260
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3261
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3262
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3263
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3264
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3265
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3266
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3267
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3268
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3269
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3270
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3271
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3272
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3273
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3274
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3275
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3276
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3277
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3278
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3279
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3280
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3281
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3282
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3283
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3284
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3285
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3286
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3287
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3288
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3289
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3290
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3291
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3292
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3293
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3294
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3295
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3296
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3297
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3298
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3299
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3300
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3301
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3302
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3303
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3304
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3305
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3306
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3307
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3308
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3309
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3310
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3311
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3312
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3313
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3314
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3315
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3316
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3317
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3318
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3319
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3320
+    no shutdown
+    !
+
+
+    default interface ePON 0/6
+    interface EPON0/6
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3321
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3322
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3323
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3324
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3325
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3326
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3327
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3328
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3329
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3330
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3331
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3332
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3333
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3334
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3335
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3336
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3337
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3338
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3339
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3340
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3341
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3342
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3343
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3344
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3345
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3346
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3347
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3348
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3349
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3350
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3351
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3352
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3353
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3354
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3355
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3356
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3357
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3358
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3359
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3360
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3361
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3362
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3363
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3364
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3365
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3366
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3367
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3368
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3369
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3370
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3371
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3372
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3373
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3374
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3375
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3376
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3377
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3378
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3379
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3380
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3381
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3382
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3383
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3384
+    no shutdown
+    !
+
+
+    default interface ePON 0/7
+    interface EPON0/7
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3385
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3386
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3387
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3388
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3389
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3390
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3391
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3392
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3393
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3394
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3395
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3396
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3397
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3398
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3399
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3400
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3401
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3402
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3403
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3404
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3405
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3406
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3407
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3408
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3409
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3410
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3411
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3412
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3413
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3414
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3415
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3416
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3417
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3418
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3419
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3420
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3421
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3422
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3423
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3424
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3425
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3426
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3427
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3428
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3429
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3430
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3431
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3432
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3433
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3434
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3435
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3436
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3437
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3438
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3439
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3440
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3441
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3442
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3443
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3444
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3445
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3446
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3447
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3448
+    no shutdown
+    !
+
+
+    default interface ePON 0/8
+    interface EPON0/8
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3449
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3450
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3451
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3452
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3453
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3454
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3455
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3456
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3457
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3458
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3459
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3460
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3461
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3462
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3463
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3464
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3465
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3466
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3467
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3468
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3469
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3470
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3471
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3472
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3473
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3474
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3475
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3476
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3477
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3478
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3479
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3480
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3481
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3482
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3483
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3484
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3485
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3486
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3487
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3488
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3489
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3490
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3491
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3492
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3493
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3494
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3495
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3496
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3497
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3498
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3499
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3500
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3501
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3502
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3503
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3504
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3505
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3506
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3507
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3508
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3509
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3510
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3511
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3512
+    no shutdown
+    !
+
+
+    default interface ePON 0/9
+    interface EPON0/9
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3513
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3514
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3515
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3516
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3517
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3518
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3519
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3520
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3521
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3522
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3523
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3524
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3525
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3526
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3527
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3528
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3529
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3530
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3531
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3532
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3533
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3534
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3535
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3536
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3537
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3538
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3539
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3540
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3541
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3542
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3543
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3544
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3545
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3546
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3547
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3548
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3549
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3550
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3551
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3552
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3553
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3554
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3555
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3556
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3557
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3558
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3559
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3560
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3561
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3562
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3563
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3564
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3565
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3566
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3567
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3568
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3569
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3570
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3571
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3572
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3573
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3574
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3575
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3576
+    no shutdown
+    !
+
+
+    default interface ePON 0/10
+    interface EPON0/10
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3577
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3578
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3579
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3580
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3581
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3582
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3583
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3584
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3585
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3586
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3587
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3588
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3589
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3590
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3591
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3592
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3593
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3594
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3595
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3596
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3597
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3598
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3599
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3600
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3601
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3602
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3603
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3604
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3605
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3606
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3607
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3608
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3609
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3610
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3611
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3612
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3613
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3614
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3615
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3616
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3617
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3618
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3619
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3620
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3621
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3622
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3623
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3624
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3625
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3626
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3627
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3628
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3629
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3630
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3631
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3632
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3633
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3634
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3635
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3636
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3637
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3638
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3639
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3640
+    no shutdown
+    !
+
+
+    default interface ePON 0/11
+    interface EPON0/11
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3641
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3642
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3643
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3644
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3645
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3646
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3647
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3648
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3649
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3650
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3651
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3652
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3653
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3654
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3655
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3656
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3657
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3658
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3659
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3660
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3661
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3662
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3663
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3664
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3665
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3666
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3667
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3668
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3669
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3670
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3671
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3672
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3673
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3674
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3675
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3676
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3677
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3678
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3679
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3680
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3681
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3682
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3683
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3684
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3685
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3686
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3687
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3688
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3689
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3690
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3691
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3692
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3693
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3694
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3695
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3696
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3697
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3698
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3699
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3700
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3701
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3702
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3703
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3704
+    no shutdown
+    !
+
+
+    default interface ePON 0/12
+    interface EPON0/12
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3705
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3706
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3707
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3708
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3709
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3710
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3711
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3712
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3713
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3714
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3715
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3716
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3717
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3718
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3719
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3720
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3721
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3722
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3723
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3724
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3725
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3726
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3727
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3728
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3729
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3730
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3731
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3732
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3733
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3734
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3735
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3736
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3737
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3738
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3739
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3740
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3741
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3742
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3743
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3744
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3745
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3746
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3747
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3748
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3749
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3750
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3751
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3752
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3753
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3754
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3755
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3756
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3757
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3758
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3759
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3760
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3761
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3762
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3763
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3764
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3765
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3766
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3767
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3768
+    no shutdown
+    !
+
+
+    default interface ePON 0/13
+    interface EPON0/13
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3769
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3770
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3771
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3772
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3773
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3774
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3775
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3776
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3777
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3778
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3779
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3780
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3781
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3782
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3783
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3784
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3785
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3786
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3787
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3788
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3789
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3790
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3791
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3792
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3793
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3794
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3795
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3796
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3797
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3798
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3799
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3800
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3801
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3802
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3803
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3804
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3805
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3806
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3807
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3808
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3809
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3810
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3811
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3812
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3813
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3814
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3815
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3816
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3817
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3818
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3819
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3820
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3821
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3822
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3823
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3824
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3825
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3826
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3827
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3828
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3829
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3830
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3831
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3832
+    no shutdown
+    !
+
+
+    default interface ePON 0/14
+    interface EPON0/14
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3833
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3834
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3835
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3836
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3837
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3838
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3839
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3840
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3841
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3842
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3843
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3844
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3845
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3846
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3847
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3848
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3849
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3850
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3851
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3852
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3853
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3854
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3855
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3856
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3857
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3858
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3859
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3860
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3861
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3862
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3863
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3864
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3865
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3866
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3867
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3868
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3869
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3870
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3871
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3872
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3873
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3874
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3875
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3876
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3877
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3878
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3879
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3880
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3881
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3882
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3883
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3884
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3885
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3886
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3887
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3888
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3889
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3890
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3891
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3892
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3893
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3894
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3895
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3896
+    no shutdown
+    !
+
+
+    default interface ePON 0/15
+    interface EPON0/15
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3897
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3898
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3899
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3900
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3901
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3902
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3903
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3904
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3905
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3906
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3907
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3908
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3909
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3910
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3911
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3912
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3913
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3914
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3915
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3916
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3917
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3918
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3919
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3920
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3921
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3922
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3923
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3924
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3925
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3926
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3927
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3928
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3929
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3930
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3931
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3932
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3933
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3934
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3935
+    epon pre-config-template ACCESS binded-onu-llid 40 param 3936
+    epon pre-config-template ACCESS binded-onu-llid 41 param 3937
+    epon pre-config-template ACCESS binded-onu-llid 42 param 3938
+    epon pre-config-template ACCESS binded-onu-llid 43 param 3939
+    epon pre-config-template ACCESS binded-onu-llid 44 param 3940
+    epon pre-config-template ACCESS binded-onu-llid 45 param 3941
+    epon pre-config-template ACCESS binded-onu-llid 46 param 3942
+    epon pre-config-template ACCESS binded-onu-llid 47 param 3943
+    epon pre-config-template ACCESS binded-onu-llid 48 param 3944
+    epon pre-config-template ACCESS binded-onu-llid 49 param 3945
+    epon pre-config-template ACCESS binded-onu-llid 50 param 3946
+    epon pre-config-template ACCESS binded-onu-llid 51 param 3947
+    epon pre-config-template ACCESS binded-onu-llid 52 param 3948
+    epon pre-config-template ACCESS binded-onu-llid 53 param 3949
+    epon pre-config-template ACCESS binded-onu-llid 54 param 3950
+    epon pre-config-template ACCESS binded-onu-llid 55 param 3951
+    epon pre-config-template ACCESS binded-onu-llid 56 param 3952
+    epon pre-config-template ACCESS binded-onu-llid 57 param 3953
+    epon pre-config-template ACCESS binded-onu-llid 58 param 3954
+    epon pre-config-template ACCESS binded-onu-llid 59 param 3955
+    epon pre-config-template ACCESS binded-onu-llid 60 param 3956
+    epon pre-config-template ACCESS binded-onu-llid 61 param 3957
+    epon pre-config-template ACCESS binded-onu-llid 62 param 3958
+    epon pre-config-template ACCESS binded-onu-llid 63 param 3959
+    epon pre-config-template ACCESS binded-onu-llid 64 param 3960
+    no shutdown
+    !
+
+
+    default interface ePON 0/16
+    interface EPON0/16
+    no switchport trunk vlan-allowed
+    no switchport trunk vlan-untagged
+    no switchport mode
+    no switchport pvid
+    switchport mode dot1q-translating-tunnel
+    switchport pvid 30
+    switchport protected 1
+    epon pre-config-template ACCESS binded-onu-llid 1 param 3961
+    epon pre-config-template ACCESS binded-onu-llid 2 param 3962
+    epon pre-config-template ACCESS binded-onu-llid 3 param 3963
+    epon pre-config-template ACCESS binded-onu-llid 4 param 3964
+    epon pre-config-template ACCESS binded-onu-llid 5 param 3965
+    epon pre-config-template ACCESS binded-onu-llid 6 param 3966
+    epon pre-config-template ACCESS binded-onu-llid 7 param 3967
+    epon pre-config-template ACCESS binded-onu-llid 8 param 3968
+    epon pre-config-template ACCESS binded-onu-llid 9 param 3969
+    epon pre-config-template ACCESS binded-onu-llid 10 param 3970
+    epon pre-config-template ACCESS binded-onu-llid 11 param 3971
+    epon pre-config-template ACCESS binded-onu-llid 12 param 3972
+    epon pre-config-template ACCESS binded-onu-llid 13 param 3973
+    epon pre-config-template ACCESS binded-onu-llid 14 param 3974
+    epon pre-config-template ACCESS binded-onu-llid 15 param 3975
+    epon pre-config-template ACCESS binded-onu-llid 16 param 3976
+    epon pre-config-template ACCESS binded-onu-llid 17 param 3977
+    epon pre-config-template ACCESS binded-onu-llid 18 param 3978
+    epon pre-config-template ACCESS binded-onu-llid 19 param 3979
+    epon pre-config-template ACCESS binded-onu-llid 20 param 3980
+    epon pre-config-template ACCESS binded-onu-llid 21 param 3981
+    epon pre-config-template ACCESS binded-onu-llid 22 param 3982
+    epon pre-config-template ACCESS binded-onu-llid 23 param 3983
+    epon pre-config-template ACCESS binded-onu-llid 24 param 3984
+    epon pre-config-template ACCESS binded-onu-llid 25 param 3985
+    epon pre-config-template ACCESS binded-onu-llid 26 param 3986
+    epon pre-config-template ACCESS binded-onu-llid 27 param 3987
+    epon pre-config-template ACCESS binded-onu-llid 28 param 3988
+    epon pre-config-template ACCESS binded-onu-llid 29 param 3989
+    epon pre-config-template ACCESS binded-onu-llid 30 param 3990
+    epon pre-config-template ACCESS binded-onu-llid 31 param 3991
+    epon pre-config-template ACCESS binded-onu-llid 32 param 3992
+    epon pre-config-template ACCESS binded-onu-llid 33 param 3993
+    epon pre-config-template ACCESS binded-onu-llid 34 param 3994
+    epon pre-config-template ACCESS binded-onu-llid 35 param 3995
+    epon pre-config-template ACCESS binded-onu-llid 36 param 3996
+    epon pre-config-template ACCESS binded-onu-llid 37 param 3997
+    epon pre-config-template ACCESS binded-onu-llid 38 param 3998
+    epon pre-config-template ACCESS binded-onu-llid 39 param 3999
+    epon pre-config-template ACCESS binded-onu-llid 40 param 4000
+    epon pre-config-template ACCESS binded-onu-llid 41 param 4001
+    epon pre-config-template ACCESS binded-onu-llid 42 param 4002
+    epon pre-config-template ACCESS binded-onu-llid 43 param 4003
+    epon pre-config-template ACCESS binded-onu-llid 44 param 4004
+    epon pre-config-template ACCESS binded-onu-llid 45 param 4005
+    epon pre-config-template ACCESS binded-onu-llid 46 param 4006
+    epon pre-config-template ACCESS binded-onu-llid 47 param 4007
+    epon pre-config-template ACCESS binded-onu-llid 48 param 4008
+    epon pre-config-template ACCESS binded-onu-llid 49 param 4009
+    epon pre-config-template ACCESS binded-onu-llid 50 param 4010
+    epon pre-config-template ACCESS binded-onu-llid 51 param 4011
+    epon pre-config-template ACCESS binded-onu-llid 52 param 4012
+    epon pre-config-template ACCESS binded-onu-llid 53 param 4013
+    epon pre-config-template ACCESS binded-onu-llid 54 param 4014
+    epon pre-config-template ACCESS binded-onu-llid 55 param 4015
+    epon pre-config-template ACCESS binded-onu-llid 56 param 4016
+    epon pre-config-template ACCESS binded-onu-llid 57 param 4017
+    epon pre-config-template ACCESS binded-onu-llid 58 param 4018
+    epon pre-config-template ACCESS binded-onu-llid 59 param 4019
+    epon pre-config-template ACCESS binded-onu-llid 60 param 4020
+    epon pre-config-template ACCESS binded-onu-llid 61 param 4021
+    epon pre-config-template ACCESS binded-onu-llid 62 param 4022
+    epon pre-config-template ACCESS binded-onu-llid 63 param 4023
+    epon pre-config-template ACCESS binded-onu-llid 64 param 4024
+    no shutdown
+    !
+dot1q-tunnel
+ 
