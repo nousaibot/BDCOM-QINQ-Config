@@ -1,6 +1,6 @@
 
  conf
- vlan 30
+ vlan 1000
  name IPOE
  !
  system mtu 2025
@@ -14,60 +14,36 @@
  cmd-sequence 006 switchport port-security dynamic maximum 10
  !
  interface GigaEthernet0/1
- switchport trunk vlan-allowed add 30
+ switchport trunk vlan-allowed add 1000
  switchport mode dot1q-tunnel-uplink
  no switchport trunk vlan-untagged
  no shutdown
  !
 interface GigaEthernet0/2
- switchport trunk vlan-allowed add 30
+ switchport trunk vlan-allowed add 1000
  switchport mode dot1q-tunnel-uplink
  no switchport trunk vlan-untagged
  no shutdown
  !
 interface GigaEthernet0/3
- switchport trunk vlan-allowed add 30
+ switchport trunk vlan-allowed add 1000
  switchport mode dot1q-tunnel-uplink
  no switchport trunk vlan-untagged
  no shutdown
  !
 interface GigaEthernet0/4
- switchport trunk vlan-allowed add 30
- switchport mode dot1q-tunnel-uplink
- no switchport trunk vlan-untagged
- no shutdown
- !
-interface GigaEthernet0/5
- switchport trunk vlan-allowed add 30
- switchport mode dot1q-tunnel-uplink
- no switchport trunk vlan-untagged
- no shutdown
- !
-interface GigaEthernet0/6
- switchport trunk vlan-allowed add 30
- switchport mode dot1q-tunnel-uplink
- no switchport trunk vlan-untagged
- no shutdown
- !
-interface GigaEthernet0/7
- switchport trunk vlan-allowed add 30
- switchport mode dot1q-tunnel-uplink
- no switchport trunk vlan-untagged
- no shutdown
- !
-interface GigaEthernet0/8
- switchport trunk vlan-allowed add 30
+ switchport trunk vlan-allowed add 1000
  switchport mode dot1q-tunnel-uplink
  no switchport trunk vlan-untagged
  no shutdown
  !
  interface TGigaEthernet0/1
- switchport trunk vlan-allowed add 30
+ switchport trunk vlan-allowed add 1000
  switchport mode dot1q-tunnel-uplink
  no shutdown
  !
  interface TGigaEthernet0/2
- switchport trunk vlan-allowed add 30
+ switchport trunk vlan-allowed add 1000
  switchport mode dot1q-tunnel-uplink
  no shutdown
  !
@@ -80,7 +56,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3001
     epon pre-config-template ACCESS binded-onu-llid 2 param 3002
@@ -157,7 +133,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3065
     epon pre-config-template ACCESS binded-onu-llid 2 param 3066
@@ -234,7 +210,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3129
     epon pre-config-template ACCESS binded-onu-llid 2 param 3130
@@ -311,7 +287,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3193
     epon pre-config-template ACCESS binded-onu-llid 2 param 3194
@@ -388,7 +364,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3257
     epon pre-config-template ACCESS binded-onu-llid 2 param 3258
@@ -465,7 +441,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3321
     epon pre-config-template ACCESS binded-onu-llid 2 param 3322
@@ -542,7 +518,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3385
     epon pre-config-template ACCESS binded-onu-llid 2 param 3386
@@ -619,7 +595,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3449
     epon pre-config-template ACCESS binded-onu-llid 2 param 3450
@@ -696,7 +672,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3513
     epon pre-config-template ACCESS binded-onu-llid 2 param 3514
@@ -773,7 +749,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3577
     epon pre-config-template ACCESS binded-onu-llid 2 param 3578
@@ -850,7 +826,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3641
     epon pre-config-template ACCESS binded-onu-llid 2 param 3642
@@ -927,7 +903,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3705
     epon pre-config-template ACCESS binded-onu-llid 2 param 3706
@@ -1004,7 +980,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3769
     epon pre-config-template ACCESS binded-onu-llid 2 param 3770
@@ -1081,7 +1057,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3833
     epon pre-config-template ACCESS binded-onu-llid 2 param 3834
@@ -1158,7 +1134,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3897
     epon pre-config-template ACCESS binded-onu-llid 2 param 3898
@@ -1235,7 +1211,7 @@ interface GigaEthernet0/8
     no switchport mode
     no switchport pvid
     switchport mode dot1q-translating-tunnel
-    switchport pvid 30
+    switchport pvid 1000
     switchport protected 1
     epon pre-config-template ACCESS binded-onu-llid 1 param 3961
     epon pre-config-template ACCESS binded-onu-llid 2 param 3962
